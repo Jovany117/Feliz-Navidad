@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: green;
+  font-family: 'Neuton', sans-serif;
+}
+
+.contenedor {
+  background: white;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+}
+
+.arbolito {
+  width: 60%; /* Se ajustó para hacerlo más responsivo */
+  max-width: 600px;
+  height: auto;
+  position: absolute;
+  bottom: -20px;
+  right: 50%;
+  transform: translateX(50%);
+  animation: sube 3s ease-out 1;
+}
+
+.adorno {
+  width: 2vw; /* Se ajustó para hacerlo más responsivo */
+  height: 2vw; /* Se ajustó para hacerlo más responsivo */
+  background: gold;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  animation: aparece 3s linear 3s 1 backwards, cambio 3s linear infinite;
+}
+
+.bolita1 {
+  top: 15%;
+  left: 49%;
+  animation-delay: 3s;
+}
+
+.bolita2 {
+  top: 59%;
+  left: 48%;
+  animation-delay: 5s;
+  position: absolute;
+}
+
+.bolita3 {
+  top: 75%;
+  left: 49%;
+  animation-delay: 7s;
+}
+
+.bolita4 {
+  top: 80%;
+  left: 52%;
+  animation-delay: 9s;
+}
+
+@keyframes sube {
+  from {
+    transform: translateX(50%) translateY(100%);
+  }
+  to {
+    transform: translateX(50%) translateY(0%);
+  }
+}
+
+@keyframes cambio {
+  0% {
+    background: gold;
+    box-shadow: 0 0 2em gold;
+  }
+  33% {
+    background: green;
+    box-shadow: 0 0 2em green;
+  }
+  66% {
+    background: blue;
+    box-shadow: 0 0 2em blue;
+  }
+  100% {
+    background: orange;
+    box-shadow: 0 0 2em orange;
+  }
+}
+
+@keyframes aparece {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+p {
+  width: 90%; /* Se ajustó para hacerlo más responsivo */
+  max-width: 40em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font: 400 1em/1.5 "Neuton";
+  color: #ffffff40;
+  display: inline-block;
+  border: 4px double #ffffff40;
+  border-width: 4px 0;
+  margin: 20px auto; /* Se añadió para centrar y dar espacio */
+}
+
+p span {
+  font: 700 4vw/1 "Oswald", sans-serif; /* Se ajustó para hacerlo más responsivo */
+  padding: 0.25em 0 0.325em;
+  display: block;
+  margin: 0 auto;
+  text-shadow: 0 0 4vw; /* Se ajustó para hacerlo más responsivo */
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .arbolito {
+    width: 80%;
+  }
+
+  .adorno {
+    width: 6vw;
+    height: 6vw;
+  }
+
+  .bolita1, .bolita2, .bolita3, .bolita4 {
+    top: 50%;
+  }
+}
